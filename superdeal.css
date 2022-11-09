@@ -1,0 +1,24 @@
+#subNav{
+    background:rgb(244, 242, 242);
+    height: 100px;
+    display: flex;
+}
+#left{
+    border:1px solid red;
+    display:flex;
+    width:30%;
+    align-content: flex-end;
+    height: 100px;
+}
+#right{
+    border:1px solid red;
+    display:flex;
+    width:30%;
+    height: 100px;
+}
+.subNav_category{
+    border:1px solid red;
+    display:flex;
+    width:30%;
+    height: 100px;
+}
