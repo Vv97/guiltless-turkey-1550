@@ -1,0 +1,109 @@
+*{
+    padding: 0px;
+    box-sizing: border-box;
+}
+#show{
+    height: 150px;
+    width: 90%;
+    border: 1px solid red;
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    margin-top: 10px;
+}
+#show img{
+    width: 19.35%;
+}
+
+#coll{
+    height: 40px;
+    width: 15%;
+    border: 1px solid blue;
+    display: flex;
+    margin-top: 50px;
+    gap: -10px;
+    margin-left: 65px;
+}
+#coll > img{
+    height: 90%;
+}
+#coll > h2{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+}
+#collection{
+    height: 260px;
+    width: 90%;
+    border: 0px solid red;
+    margin-left: 65px;
+    display: flex;
+    gap: 10px;
+}
+#collpic{
+    display: flex;
+    gap: 10px;
+}
+#super{
+    height: 40px;
+    width: 15%;
+    border: 1px solid blue;
+    display: flex;
+    margin-top: 50px;
+    gap: -10px;
+    margin-left: 65px;
+}
+#super h2{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+}
+#superdeal{
+    height: 350px;
+    width: 90%;
+    border: 0px solid red;
+    margin-left: 65px;
+    display: flex;
+    gap: 10px;
+}
+#superpic{
+    display: flex;
+    gap: 10px;
+}
+#pagination{
+    height: fit-content;
+    width: 90%;
+    border: 1px solid brown;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+}
+#new{
+    height: 40px;
+    width: 15%;
+    border: 1px solid blue;
+    display: flex;
+    margin-top: 50px;
+    gap: -10px;
+    margin-left: 65px;
+}
+#new h2{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+}
+#recom{
+    height: 40px;
+    width: 26%;
+    border: 1px solid blue;
+    display: flex;
+    margin-top: 50px;
+    gap: -10px;
+    margin-left: 65px;
+}
+#recom h2{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+}
