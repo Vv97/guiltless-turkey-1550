@@ -1,24 +1,98 @@
 #subNav{
     background:rgb(244, 242, 242);
-    height: 100px;
+    height: 130px;
     display: flex;
 }
 #left{
-    border:1px solid red;
     display:flex;
-    width:30%;
-    align-content: flex-end;
+    width:fit-content;
     height: 100px;
+    margin:auto;
+    margin-right: 0;
+    line-height: 0%;
+    
+}
+
+#left div:nth-child(1){
+    margin-right:20px;
+}
+#left div>img{
+    height:70%;
+    width:fit-content;
+}
+
+#left div:hover{
+    background-color:rgb(227, 222, 222);
 }
 #right{
-    border:1px solid red;
     display:flex;
-    width:30%;
-    height: 100px;
+    width:40%;
+    height: 100%;
+    margin:auto;
+    margin-left: 0;
+    
 }
 .subNav_category{
-    border:1px solid red;
     display:flex;
     width:30%;
     height: 100px;
 }
+
+
+.scrollmenu{
+    background-color:rgb(244, 242, 242);
+    overflow:scroll;
+    white-space: nowrap;
+  }
+
+.scrollmenu div{
+    height:90%;
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    line-height: 0;
+  }
+  
+.scrollmenu div:hover {
+    background-color: rgb(227, 222, 222);
+  }
+
+  .categoryItemImg{
+    width:50%;
+    height:60%;
+  }
+
+
+
+  /* container */
+
+  #superdeal_container{
+  border:1px solid red;
+  width:60%;
+  margin:auto;
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  column-gap: 5px;
+  row-gap: 20px;
+  }
+
+  .item{
+    padding:10px;
+    border:1px solid red;
+    width:95%;
+    height:400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .item>img{
+    width:100%;
+    height:60%;
+  }
+  #superdeal_container h3{
+    font-size: 14px;
+    height:30px;
+    color: #000;
+    overflow:hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
