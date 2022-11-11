@@ -98,19 +98,6 @@ height: 75%;
   padding:2%;
   text-align: center;
   font-size:21px;
-  /* position: absolute; */
-        /* off.style.color="white";
-        off.style.textAlign="center";
-        off.style.position="absolute";
-        off.style.height="6%";
-        off.style.width="3%";
-        off.style.backgroundColor="red";
-        off.style.position="absolute";
-        off.style.marginTop="-17.2%";
-        off.style.marginLeft="16%"
-        off.style.borderRadius="50%";
-        off.style.fontSize="150%"
-        off.style.padding="0.5%" */
 }
 .new_items>.down>.cards{
   width:50%;
