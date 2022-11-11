@@ -320,7 +320,6 @@ function Addname1(countryname, currency_code) {
 
 const an = () => {
     country.forEach(({ country, currency_code }) => {
-        console.log(country, currency_code)
         let li = document.createElement("li");
         li.className = "js_list";
 
