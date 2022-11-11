@@ -1,0 +1,206 @@
+body {
+    font-family: sans-serif;
+  }
+  .new_container>.new_items>.new_items_small{
+    display: flex;
+  }
+
+  .new_container {
+    border: 3px solid red ;
+    /* padding-top: 50px; */
+    width: 90%;
+    height:250px;
+    margin: auto;
+    display: flex;
+  }
+  
+  
+  .new_heading{
+    /* border: 2px solid green; */
+   display: flex;
+    margin: auto;
+  }
+  .new_heading>.content>img{
+    padding-top:33px;
+    width: 50px;
+    height: 40px;
+  }
+  .new_heading>.content{
+    display: flex;
+    margin: auto;
+  }
+  .new_heading>.content>h3{
+    /* padding-top: 7px; */
+    box-sizing: border-box;
+    height: 27px;
+    align-content: flex-end;
+    display:flex;
+    align-items: center;
+    font-size: 40px;
+    margin-left: 5px;
+    margin-bottom: px;
+    color: #000;
+    font-weight: bold;
+  }
+.new_items{
+  border: 2px solid blue;
+  width: 20%;
+  height: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* display: flex; */
+ 
+}
+.new_items>.new_item1{
+  display: flex;
+}
+.new_items>.up{
+height: 25%;
+display: flex;
+}
+.new_items>.down{
+height: 75%;
+  display: flex;
+  }
+.up>.cards:nth-child(1){
+  width: 80%;
+  height: 100%;
+  /* border: 2px solid red; */
+  font-size: 25px;
+}
+.new_items_strikedOffPrice {
+  text-decoration: line-through;
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 161px;
+  height: 20px;
+  margin-top: 75%;
+  font-size: 18px;
+  
+  color: #999;
+}
+/* .new_items_finalPrice {
+  display: flex;
+  justify-content: center;
+  width: 161px;
+  height: 20px;
+  margin-top: 5px;
+  font-size: 20px;
+  color: #f30240;
+} */
+.up>.cards:nth-child(2){
+  width:16%;
+  height:70%;
+  color: white;
+  background-color: #f30240;
+  /* border: 2px solid black; */
+  font-size: 20px;
+  border-radius: 50%;
+  padding:2%;
+  text-align: center;
+  font-size:21px;
+  /* position: absolute; */
+        /* off.style.color="white";
+        off.style.textAlign="center";
+        off.style.position="absolute";
+        off.style.height="6%";
+        off.style.width="3%";
+        off.style.backgroundColor="red";
+        off.style.position="absolute";
+        off.style.marginTop="-17.2%";
+        off.style.marginLeft="16%"
+        off.style.borderRadius="50%";
+        off.style.fontSize="150%"
+        off.style.padding="0.5%" */
+}
+.new_items>.down>.cards{
+  width:50%;
+  height:100%;
+  border: 2px solid pink;
+}
+.down>.cards:nth-child(1){
+  font-size: 20px;
+  color: #e32626;
+}
+/* .down>.cards:nth-child(1)>.new_items_strikedOffPrice{
+padding-top: 75%;
+} */
+.down>.cards:nth-child(2)>img{
+  width:100%;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+.lc_head{
+  padding-top: 20px;
+  font-size:30px;
+  margin-left:5%;
+}
+#latest_collection{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(1fr);
+  gap: 50px;
+  width: 90%;
+  margin: auto;
+  /* display: flex; */
+  
+}
+#latest_collection>div:hover{
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+ #price_cart>.cart_button{
+margin-left: 40%;
+margin-bottom:2%;
+border: none;
+background-color:#e32626;
+color: aliceblue;
+font-size: 20px;
+} 
+#price_cart{
+  display: flex;
+}
+.rupees{
+  margin-left:15px;
+  color: #f30240;
+  font-size:20px;
+  font-weight: bold;
+}
+
+#s_mainbox{
+  display: flex;
+  /* border: 2px solid red; */
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  padding-left: 20px;
+  /* background: yellow; */
+  overflow-x: auto;
+  /* overflow-y: auto; */
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1,1fr;
+}
+.box{
+  /* border: 2px solid blue; */
+  width:350px;
+  margin-right: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: block;
+  height: 100%;
+
+
+}
+.box:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.up,.down{
+  display: flex;
+}
+.new_items_strikedOffPrice{
+margin-top:180PX;
+}
+
+
+
+ 
+  
+  
