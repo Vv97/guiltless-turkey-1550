@@ -1,11 +1,12 @@
-*{
+body{
     padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 #show{
     height: 150px;
     width: 90%;
-    border: 1px solid red;
+    border: 0px solid red;
     display: flex;
     gap: 10px;
     margin: auto;
@@ -18,7 +19,7 @@
 #coll{
     height: 40px;
     width: 15%;
-    border: 1px solid blue;
+    border: 0px solid blue;
     display: flex;
     margin-top: 50px;
     gap: -10px;
@@ -47,7 +48,7 @@
 #super{
     height: 40px;
     width: 15%;
-    border: 1px solid blue;
+    border: 0px solid blue;
     display: flex;
     margin-top: 50px;
     gap: -10px;
@@ -73,7 +74,7 @@
 #pagination{
     height: fit-content;
     width: 90%;
-    border: 1px solid brown;
+    border: 0px solid brown;
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -82,11 +83,15 @@
 #new{
     height: 40px;
     width: 15%;
-    border: 1px solid blue;
+    border: 0px solid blue;
     display: flex;
     margin-top: 50px;
     gap: -10px;
     margin-left: 65px;
+}
+#number{
+    margin-top: 30px;
+    margin-left: 425px;
 }
 #new h2{
     font-size: 20px;
@@ -96,7 +101,7 @@
 #recom{
     height: 40px;
     width: 26%;
-    border: 1px solid blue;
+    border: 0px solid blue;
     display: flex;
     margin-top: 50px;
     gap: -10px;
@@ -107,3 +112,197 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    margin: auto;
 }
+#recomforyou{
+    height: fit-content;
+    width: 90%;
+    border: 0px solid red;
+    margin: auto;
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+}
+#recomforyou p{
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: auto;
+}
+
+/* FOOTER AREA */
+#homelast{
+    height: fit-content;
+    width: 90%;
+    border: 0px solid red;
+    display: flex;
+    margin: auto;
+    margin-top: 100px;
+}
+#homelast p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#homelast p:hover{
+    color: red;
+}
+#pop{
+    margin-left: 10px;
+}
+#pop1{
+    height: fit-content;
+    width: 80%; 
+    border: 0px solid rgb(39, 3, 3);
+    display: flex;
+    gap: 20px; 
+    width: 119%;
+    justify-content: space-between;
+
+}
+#pop2{
+    height: fit-content;
+    width: 80%; 
+    border: 0px solid rgb(39, 3, 3);
+    display: flex;
+    gap: 20px;
+    width: 119%;
+    justify-content: space-between;
+    margin-top: -30px;
+    margin-bottom: 200px;
+}
+#footer1{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    gap: 20px;
+}
+#foo1 > img{
+    width:300px;
+    margin-bottom: 10px;
+}
+#foo1 >p{
+    margin-top: -20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 0px; 
+
+}
+#foo2{
+    display: flex;
+}
+#foo2 > div > img{
+    width: 50px;
+    margin-left: 26%;
+}
+#foo2 > div > h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:700;
+    font-size: 18px;
+  
+}
+#foo2>div>h3:hover{
+    color: yellow;
+}
+#foo2 > div > p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+}
+#foo3{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+#email{
+    height: 40px;
+    border: 0px solid red;
+    display: flex;
+}
+#email > h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:700;
+    font-size: 18px;
+    margin-top: 1.5%;margin-right: 10px;
+    color: grey;
+
+}
+#email > input{
+    font-size: 15px;
+    width: 250px;
+    
+}
+#email > button{
+    background-color: black;
+    color: white;
+    width: 100px;
+
+}
+#icon{
+    display: flex;
+    gap: 30px;
+}
+#icon > img{
+    height: 30px;
+}
+#service{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+#service > div >h4{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+#service > div > p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: -10px;
+    font-size: 14px;
+}
+#service > div > p:hover{
+   text-decoration:underline;
+}
+#scan{
+    display: flex;
+    margin-top: 20px;
+}
+#scan > div{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#scan > div > img{
+    width: 100px;
+}
+#fooLast{
+    height: 30px;
+    width: 90%;
+    border: 0px solid red;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 80px;
+}
+#foolast1{
+    height: 30px;
+    width: 50%;
+    border: 0px solid red;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 80px;
+}
+#foolast2{
+    height: 40px;
+    background-color: black;
+   
+}
+#foolast2 > p{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align:center;
+    padding-top: 6px;
+    font-size: 14px;
+}
+

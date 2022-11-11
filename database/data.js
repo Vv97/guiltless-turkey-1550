@@ -290,9 +290,42 @@ const data =[
     },
 ];
 
+const sys= async() =>{
+    try{
+        let res= await fetch(`http://localhost:8080/posts`);
+        console.log("res",res)
+    }catch(err){
+        console.log("err",err)
+    }
+}
 
 
-let api_key='http://localhost:8080/posts';
+// let api_key='http://localhost:8080/posts';
+// let api_key='https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan';
+let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user'
+// const postData=async(data)=>{
+//     try{
+
+//         let res= await fetch(api_key,{
+//             method:"POST",
+//             body: JSON.stringify(data),
+//             headers:{
+//                 "content-type":"application/json"
+//             }
+//         });
+
+
+
+//         let addeddata=await res.json();
+//         console.log(addeddata);
+
+//     }catch(error){
+//          console.log(error);
+//     }
+// }
+
+
+// postData(data);
 
 //get data
 const getData=async()=>{
@@ -300,7 +333,10 @@ const getData=async()=>{
 
        let res=await fetch(api_key);
        let data=await res.json()
+    //    console.log(data);
+       append(data);
        console.log(data);
+    
 
     }catch(error){
          console.log(error);
@@ -316,6 +352,7 @@ getData();
 let addBtn=document.getElementById("addProduct");
 addBtn.onclick=()=>{
     addData();
+
 }
 
 
@@ -332,15 +369,17 @@ const addData=async ()=>{
     let category = document.getElementById("category").value;
     let sub_category = document.getElementById("sub_category").value;
     let discount = document.getElementById("discount").value;
+    let quantity = document.getElementById("quantity").value;
     try{
         let newData={
-            id:id,
+          
             title:title,
-            image:image,
+            img_url:image,
             price:price,
             category:category,
             sub_category:sub_category,
             discount:discount,
+            quantity:quantity
         }
         
 
@@ -361,3 +400,79 @@ const addData=async ()=>{
     }
 
 }
+
+//append
+
+const append = (data) =>{
+    let container = document.getElementById("container")
+    container.innerHTML=null;
+
+    document.body.append(container);
+
+    data.forEach((el)=>{
+        let div = document.createElement("div");
+            div.setAttribute("class", "item");
+            
+            let image=document.createElement("img");
+            image.src=el.img_url;
+
+            let name=document.createElement("h3");
+                name.innerText=el.title;
+
+            let price_tag= document.createElement("h3");
+                price_tag.setAttribute("class", "product_price");
+                price_tag.innerText=el.price;
+
+
+             
+
+            div.append(image,name,price_tag);
+            container.append(div);
+
+    })
+
+}
+
+
+//filter
+let filterBtn=document.getElementById("btn");
+ filterBtn.onclick = ()=>{
+    let container = document.getElementById("container")
+    container.innerHTML=null;
+let content=filterBtn.innerText;
+   filterData(content);
+}
+
+
+
+const filterData=async(content)=>{
+    let arr=[];
+    try{
+
+       let res=await fetch(api_key);
+       let data=await res.json()
+    
+       
+       data.forEach((el)=>{
+        if(el.category===content){
+            arr.push(el);
+        }
+       })
+       console.log(arr)
+       append(arr);
+       
+
+    }catch(error){
+         console.log(error);
+    }
+}
+
+
+
+
+
+
+
+
+
+

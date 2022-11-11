@@ -1,0 +1,164 @@
+#subNav{
+    background:rgb(244, 242, 242);
+    height: 130px;
+    display: flex;
+
+}
+#left{
+    display:flex;
+    width:fit-content;
+    height: 100px;
+    margin:auto;
+    margin-right: 0;
+    line-height: 0%;
+    
+}
+
+#left div:nth-child(1){
+    margin-right:20px;
+}
+#left div>img{
+    height:70%;
+    width:fit-content;
+}
+
+#left div:hover{
+    background-color:rgb(227, 222, 222);
+}
+#right{
+    display:flex;
+    width:40%;
+    height: 100%;
+    margin:auto;
+    margin-left: 0;
+    
+}
+.subNav_category{
+    display:flex;
+    width:30%;
+    height: 100px;
+}
+
+
+.scrollmenu{
+    background-color:rgb(244, 242, 242);
+    overflow:scroll;
+    white-space: nowrap;
+  }
+
+.scrollmenu div{
+    height:90%;
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    line-height: 0;
+  }
+  
+.scrollmenu div:hover {
+    background-color: rgb(227, 222, 222);
+  }
+
+  .categoryItemImg{
+    width:50%;
+    height:60%;
+  }
+
+
+
+  /* container */
+
+  #superdeal_container{
+  width:60%;
+  margin:auto;
+  margin-top: 10px;
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  column-gap: 5px;
+  row-gap: 20px;
+  }
+
+  .item{
+    padding:10px;
+    width:95%;
+    height:400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .item>img{
+    width:100%;
+    height:60%;
+  }
+
+  #superdeal_container>.item:hover h3{ 
+    color:red;
+  }
+
+
+
+  #superdeal_container h3{
+    font-size: 14px;
+    height:30px;
+    color: #000;
+    overflow:hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  #superdeal_container h5{
+    font-size: 12px;
+    color:  #666;;
+  }
+
+
+
+
+
+
+
+  #subNav{
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+  #subNav_bar{
+    width:60%;
+    margin:auto;
+    height:30px;
+    display: flex;
+  }
+  
+
+
+  .dis_div{
+    color:white;
+    text-align:center;  
+   box-shadow:rgba(50, 50,93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+   position:absolute;
+   height:50px;
+   width:50px;
+   background-color:red;
+   padding:5px;
+   margin-top:-20.5%;
+   margin-left:8.5%;
+   border-radius:50%; 
+  }
+
+
+
+  .addTocartbtn{
+    text-align:center;  
+   position:absolute;
+   height:3%;
+   width:5%;
+   padding:5px;
+   margin-top:-3%;
+   margin-left:6%;
+   font-size: 15px;
+  }
