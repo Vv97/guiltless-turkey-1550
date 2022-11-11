@@ -100,4 +100,3 @@ localStorage.setItem("checkout",JSON.stringify(checkArray));
 
 }
 
-

@@ -1,93 +1,3 @@
-// let data =[
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$35.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$36.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$50.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$70.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$80.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$100.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$35.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$36.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$50.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$70.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$80.29",
-
-
-// },
-// {
-//     img_url:"https://gloimg.gbtcdn.com/soa/gb/item/6898341271098814464/16469/goods_thumb_220-v1/7d9a6e744268.jpg",
-//     name:"Global Xiomi Mi Tv box",
-//     price:"$100.29",
-
-
-// }
-// ];
-
-
-
-
 
     // paginating code
 let buttons_div=document.getElementById("buttons");
@@ -117,8 +27,7 @@ for(let i=1;i<=button;i++){
     getpaginatedData(1,12);
 
 
-
-    // get data
+// get data
 
     const getData = async() => {
         try{
@@ -262,7 +171,6 @@ const All = async() => {
         console.log(error);
         }
 };
-
 
 
 
