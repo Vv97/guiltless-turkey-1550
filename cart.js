@@ -5,10 +5,7 @@ let cart= JSON.parse(localStorage.getItem("cart_items"))||[];
 const totalcount = () => {
   document.querySelector("#Totalitem>span").innerText=cart.length;
 }
-totalcount(cart)
-
-
-
+totalcount(cart);
 
 function display(cart){
   let totalprice = 0;
@@ -18,7 +15,6 @@ function display(cart){
 
       cart.forEach(function(el,i){ 
 
-   
     let div=document.createElement("div");
 
     let img_url=document.createElement("img");
@@ -55,9 +51,6 @@ function display(cart){
 }
 
 display(cart);
-
-
-
 // Delete function
 function Delete(el,i){
     cart.splice(i,1);
@@ -77,26 +70,5 @@ display(cart);
 totalcount(cart)
 checkArray.push(el);
 localStorage.setItem("checkout",JSON.stringify(checkArray));
-
-
-  //  let box2_div=document.getElementById("box2");
-  //  box2_div.innerHTML=null;
-  //  let cost = document.querySelector("#Totalcost>span");
-  //  cost.innerText =el.price;
-  //  document.querySelector("#Totalitem>span").innerText=1;
-
-  //  let div=document.createElement("div");
-  //  let imgurl=document.createElement("img");
-  //  imgurl.src=el.img_url;
-  //  let titlee=document.createElement("p");
-  // titlee.innerText=el.title;
-  //  let pricee=document.createElement("h5");
-  //  pricee.innerText=`Price Rs.:${el.price}`;
-  // let discountt=document.createElement("h5");
-  // discountt.innerText=`Dis%:${el.discount}`;
-  // div.append(imgurl,titlee,pricee,discountt);
-  //    box2_div.append(div)
-    
-
-}
+};
 

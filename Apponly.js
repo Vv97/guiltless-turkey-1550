@@ -1,5 +1,4 @@
-
-    // paginating code
+ // paginating code
 let buttons_div=document.getElementById("buttons");
 const createbuttons = (Toatal_images,images_per_page) => {
 const button=Math.ceil(Toatal_images/images_per_page);
@@ -13,11 +12,8 @@ for(let i=1;i<=button;i++){
     buttons_div.append(btn);
 }
 };
-
-
 // get paginated data function
     const getpaginatedData = async(clicked_button,limit) => {
-
     let response=await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/user?page=${clicked_button}&limit=${limit}`);
     let data= await response.json();
     console.log(data);
@@ -25,10 +21,7 @@ for(let i=1;i<=button;i++){
     
     }
     getpaginatedData(1,12);
-
-
 // get data
-
     const getData = async() => {
         try{
         let response=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/user');
@@ -78,8 +71,6 @@ const append = (data) => {
       
         let x=localStorage.setItem("cart_items",JSON.stringify(dataArray));
         console.log(x);
-     
-    
     }
 
 //filter code with buttons
@@ -137,7 +128,6 @@ let filterBtn8=document.getElementById("btn8");
 let content=filterBtn8.innerText;
    filterData(content);
 }
-
 // filter code
 const filterData=async(content)=>{
     let arr=[];
@@ -155,8 +145,6 @@ const filterData=async(content)=>{
          console.log(error);
     }
 };
-
-
 // btn all (ALL)
 let btnAll=document.getElementById("all");
  btnAll.onclick = ()=>{
@@ -172,13 +160,7 @@ const All = async() => {
         }
 };
 
-
-
-
-
 // price high to low
-
-
 let htol=document.getElementById("htol");
 htol.onclick= () =>{
     Sorting();
@@ -196,9 +178,6 @@ return b.price-a.price;
 }
     
 };
-
-
-
 // price low to high 
 
 let ltoh=document.getElementById("ltoh");
