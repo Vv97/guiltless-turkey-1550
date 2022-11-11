@@ -71,4 +71,25 @@ totalcount(cart)
 checkArray.push(el);
 localStorage.setItem("checkout",JSON.stringify(checkArray));
 };
+    //Delete_array.push(el);
+   cart.splice(i,1);
+   //localStorage.setItem("deleted_array",JSON.stringify(Delete_array));
+   localStorage.setItem("cart_items",JSON.stringify(cart));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
