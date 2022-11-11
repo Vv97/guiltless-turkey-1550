@@ -292,8 +292,9 @@ const data =[
 
 
 
-let api_key='http://localhost:8080/posts';
+// let api_key='http://localhost:8080/posts';
 // let api_key='https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan';
+let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user'
 // const postData=async(data)=>{
 //     try{
 
@@ -326,6 +327,7 @@ const getData=async()=>{
        let data=await res.json()
     //    console.log(data);
        append(data);
+       console.log(data);
     
 
     }catch(error){
@@ -359,6 +361,7 @@ const addData=async ()=>{
     let category = document.getElementById("category").value;
     let sub_category = document.getElementById("sub_category").value;
     let discount = document.getElementById("discount").value;
+    let quantity = document.getElementById("quantity").value;
     try{
         let newData={
           
@@ -368,6 +371,7 @@ const addData=async ()=>{
             category:category,
             sub_category:sub_category,
             discount:discount,
+            quantity:quantity
         }
         
 
