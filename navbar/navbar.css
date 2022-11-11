@@ -338,7 +338,8 @@ table {
     position: absolute;
     left: -66.25rem;
     background-color: #ffff;
-    z-index: 888;
+    z-index: 999;
+
 }
 
 
@@ -562,7 +563,6 @@ table {
     width: 20%;
     font-size: 17px;
     font-weight: lighter;
-    z-index: 999;
 }
 
 
@@ -576,6 +576,7 @@ table {
     box-shadow: var(--shodow);
     padding: 20px 20px;
     background: #ffff;
+    z-index: 999;
 }
 
 .showcart {
@@ -741,14 +742,15 @@ table {
     display: none;
     position: absolute;
     top: 0;
-    left: 15rem;
+    left: 15.35rem;
     padding-left: 45px;
-    width: 58.4375rem;
+    width: 59.4375rem;
     height: 26.25rem;
     line-height: 22px;
     background-color: #fff;
     overflow: hidden;
     white-space: nowrap;
+ /* box-shadow: var(--shodow); */
 
 }
 
@@ -771,7 +773,7 @@ table {
 .headCate_childColumn {
     display: inline-block;
     vertical-align: top;
-    width: 14rem;
+    width: 14.55rem;
     font-size: 14px;
 
 }
