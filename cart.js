@@ -5,7 +5,10 @@ let cart= JSON.parse(localStorage.getItem("cart_items"))||[];
 const totalcount = () => {
   document.querySelector("#Totalitem>span").innerText=cart.length;
 }
-totalcount(cart);
+totalcount(cart)
+
+
+
 
 function display(cart){
   let totalprice = 0;
@@ -15,6 +18,7 @@ function display(cart){
 
       cart.forEach(function(el,i){ 
 
+   
     let div=document.createElement("div");
 
     let img_url=document.createElement("img");
@@ -51,6 +55,9 @@ function display(cart){
 }
 
 display(cart);
+
+
+
 // Delete function
 function Delete(el,i){
     cart.splice(i,1);
@@ -63,7 +70,7 @@ function Delete(el,i){
 
 let checkArray=JSON.parse(localStorage.getItem("checkout"))||[];
 const buynow = (el,i) => {
- window.location.href='././checkout.html';
+// window.location.href='././checkout.html';
  cart.splice(i,1);
 localStorage.setItem("cart_items",JSON.stringify(cart));
 display(cart);
@@ -71,25 +78,5 @@ totalcount(cart)
 checkArray.push(el);
 localStorage.setItem("checkout",JSON.stringify(checkArray));
 };
-    //Delete_array.push(el);
-   cart.splice(i,1);
-   //localStorage.setItem("deleted_array",JSON.stringify(Delete_array));
-   localStorage.setItem("cart_items",JSON.stringify(cart));
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
