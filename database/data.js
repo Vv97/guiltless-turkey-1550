@@ -290,6 +290,14 @@ const data =[
     },
 ];
 
+const sys= async() =>{
+    try{
+        let res= await fetch(`http://localhost:8080/posts`);
+        console.log("res",res)
+    }catch(err){
+        console.log("err",err)
+    }
+}
 
 
 // let api_key='http://localhost:8080/posts';
