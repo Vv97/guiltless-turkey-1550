@@ -1,3 +1,8 @@
+body{
+ padding: 0%;
+ margin: 0%;
+}
+
 #box1 {
    
     display: grid;
@@ -8,6 +13,7 @@
     cursor: pointer;
    
 }
+
 #box1 p:hover {
     font-size: large;
     color:rgb(227, 204, 72);
@@ -28,16 +34,31 @@
     padding: 20px;
     width: 300px;
   
+  
    
+}
+
+#box2 >div:hover{
+    background-color:whitesmoke;
+    font-size:large;
+  font-style:italic;
 }
 #box2 > div > button {
     margin-bottom: 40px;
     cursor: pointer;
-   
+   border-radius:2px;
     gap: 20px;
 }
+
+#box2 > div > button:hover{
+    background-color:rgb(97, 149, 97);
+ 
+  font-size:larger;
+  
+   
+}
 #box2 > div > img{
-    height: 180px;
+    height:180px;
 }
 #sort{
    display: flex;
@@ -61,7 +82,15 @@
     margin-top: 10px;
 }
 #buttons > button{
-   margin: 2px;
+   margin: 5px;
+   border: 2px solid wheat;
+   cursor: pointer;
+}
+
+#buttons > button:hover{
+    font-size:large;
+    background-color: darksalmon;
+   border: 2px solid black;
 }
 #total{
     display: flex;
@@ -102,23 +131,31 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6
 }
 #box3 > div{
     text-align: center;
-    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 0px solid red;
     width: 50%;
     padding: 5%;
     background-color: whitesmoke;
+}
+#box3 > div:hover{
+    background-color: azure;
 }
 #box3 > div > img{
     width:50%;
     height:50%;
 }
 #Count{
+    margin-bottom: 10px;
     display: flex;
    justify-content: space-evenly;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
 }
 .dis_div{
     color:whitesmoke;
+    text-align: center;
     font-style: italic;
-   box-shadow:rgba(17, 17, 33, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    position:absolute;
    height: 50px;
    width:50px;

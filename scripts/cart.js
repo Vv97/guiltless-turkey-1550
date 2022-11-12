@@ -1,4 +1,3 @@
-
 //getting all the products which are present in cart
 
 let cart_api_key='https://636d5e73b567eed48ac032d6.mockapi.io/cart'
@@ -16,8 +15,6 @@ const getData=async()=>{
   }
 }
 getData();
-
-
 
 //total count code
 
@@ -118,23 +115,6 @@ const buynow = async(el) => {
 console.log(error);
 }
 };
-    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

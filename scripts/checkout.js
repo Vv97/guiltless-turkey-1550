@@ -58,28 +58,20 @@ const append = (data) =>{
              flash_sale.innerText=`Hurry! only ${el.quantity} items left in stock`;
            
 
-           let off=document.createElement("div");
-           off.setAttribute("class", "dis_div");
-           off.innerText=el.discount+"%  OFF";
+            let price=document.createElement("h3");
+            price.innerText=`Price Rs :${el.price}`;
+            cost+=+el.price;
 
-           
-         
-            div1.append(image);
-            div2.append(name,price_tag,mrp,flash_sale,off)
-           div.append(div1,div2);
-           container.append(div);
-
-   })
-
-}
-
-
-
-
-let order_place=document.getElementById("order_place");
-order_place.onclick=()=>{
-  placeOrder();
-}
+            let btn=document.createElement("button");
+            btn.innerText="Checkout";
+           div.append(img_url,title,price,btn);
+           box3_div.append(div);
+        });
+        
+     let totalprice= document.querySelector("#totalprice > span");
+     totalprice.innerText=cost;
+      totalcount(cart1);
+           }
 
 let arr=[];
 const placeOrder=async ()=>{
