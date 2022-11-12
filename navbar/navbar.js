@@ -322,6 +322,7 @@ Addcountry()
 
 function Addname1(countryname, currency_code) {
     let val = countryname + currency_code;
+    console.log(val)
     wrapper1.classList.remove("active")
     changename_1.textContent = val;
 }
@@ -413,10 +414,13 @@ const showcartdata = (res) => {
 
 const cartcount = async () => {
     try {
-        const showcount = document.querySelector(".badges");
+
         let fetchdata = await fetch("https://636d5e73b567eed48ac032d6.mockapi.io/cart");
         let getdata = await fetchdata.json();
+        const showcount = document.querySelector(".badges");
+        console.log(getdata.length)
         showcount.textContent = getdata.length
+
         let showcountdata = document.querySelector(".numberoi");
         showcountdata.textContent = `${getdata.length} Item(s)`
 
@@ -429,6 +433,8 @@ const cartcount = async () => {
 }
 
 cartcount()
+
+
 
 
 
