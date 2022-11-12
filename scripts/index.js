@@ -327,7 +327,7 @@ for(let i=1; i<=page; i++){
 
   
 
-  let api_key='http://localhost:8080/posts';
+  let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user';
 
   //get data
   const getData=async()=>{
@@ -405,10 +405,7 @@ function appendnew(data){
     button.style.marginTop="10px";
 
     button.onclick=()=>{
-      console.log("add");
-      //let addTo=[];
-      addTo.push(el);
-      localStorage.setItem("addTo",JSON.stringify(addTo));
+      add_to_cart(el)
     }
 
 
@@ -425,3 +422,33 @@ function appendnew(data){
   })
 
 }
+
+
+//Adding product to cart
+
+
+
+const add_to_cart= async(el)=>{
+
+  
+  
+  try{
+
+
+    let res= await fetch("https://636d5e73b567eed48ac032d6.mockapi.io/cart",{
+      method:"POST",
+      body: JSON.stringify(el),
+      headers:{
+        "content-type":"application/json"
+      }
+    });
+    
+    let data=await res.json();
+    console.log(data);
+  
+
+
+  }catch(error){
+     console.log(error);
+  }
+} 
