@@ -1,11 +1,30 @@
-let cart= JSON.parse(localStorage.getItem("cart_items"))||[];
+
+//getting all the products which are present in cart
+
+let cart_api_key='https://636d5e73b567eed48ac032d6.mockapi.io/cart'
+
+const getData=async()=>{
+  try{
+
+     let res=await fetch(cart_api_key);
+     let data=await res.json()
+     display(data);
+  
+
+  }catch(error){
+       console.log(error);
+  }
+}
+getData();
+
+
 
 //total count code
 
 const totalcount = () => {
   document.querySelector("#Totalitem>span").innerText=cart.length;
 }
-totalcount(cart)
+totalcount(cart);
 
 let box2_div=document.getElementById("box2");
 box2_div.innerHTML = null;
@@ -14,7 +33,6 @@ function display(cart){
 
       cart.forEach(function(el,i){ 
 
-   
     let div=document.createElement("div");
 
     let img_url=document.createElement("img");
@@ -34,34 +52,35 @@ function display(cart){
      let btn=document.createElement("button");
      btn.innerText="Buy Now";
      btn.onclick= ()=>{
-     buynow(el,i);
+     buynow(el);
      }
 
      let btn1=document.createElement("button");
      btn1.innerText="Remove";
-      btn1.onclick = (event) => {
-        event.target.parentNode.remove();
-        Delete(i)
+      btn1.onclick = () => {
+        Delete(el,i)
       }
 
      div.append(img_url,title,price,discount,btn,btn1);
         box2_div.append(div);
    });
-   let cost = document.querySelector("#Totalcost>span");
-   cost.innerText = totalprice;
-   
-  
+  // console.log(totalprice);
+  let cost = document.querySelector("#Totalcost>span");
+  cost.innerText = totalprice;
+}
+
+display(cart);
 // Delete function
-function Delete(i){
+function Delete(el,i){
     cart.splice(i,1);
     localStorage.setItem("cart_items",JSON.stringify(cart));
+    display(cart)
     totalcount(cart)
  
   
+  display(data);
+  
 }
-};
-
-display(cart);
 
 let checkArray=JSON.parse(localStorage.getItem("checkout"))||[];
 const buynow = (el,i) => {
@@ -73,5 +92,28 @@ totalcount(cart)
 checkArray.push(el);
 localStorage.setItem("checkout",JSON.stringify(checkArray));
 };
+    //Delete_array.push(el);
+   cart.splice(i,1);
+   //localStorage.setItem("deleted_array",JSON.stringify(Delete_array));
+   localStorage.setItem("cart_items",JSON.stringify(cart));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

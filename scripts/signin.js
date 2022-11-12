@@ -36,3 +36,73 @@
             
         }
     })   */
+
+
+let form = document.querySelector("form");
+form.addEventListener("submit", sdata)
+
+let arr = JSON.parse(localStorage.getItem("autentication")) || [];
+console.log(arr)
+
+function sdata(el) {
+    el.preventDefault()
+
+    let email = form.email.value;
+    let password = form.password.value;
+
+    let p = 0;
+    let c = 0;
+
+
+
+
+
+    arr.forEach(el => {
+        console.log(el.email)
+
+        if (el.email == email && el.password == password) {
+            alert("succesful sign up");
+            let URL = "index.html";
+            window.location.href = URL;
+        }
+
+
+        if (el.password !== password) {
+            p++
+        }
+
+
+
+
+
+        if (el.email != email) {
+            c++
+        }
+
+
+
+
+        count(p, c)
+    })
+
+
+    function count(p, c) {
+        if (c == arr.length) {
+            alert("wrong username")
+        }
+
+        if (p == arr.length) {
+            alert("wrong password")
+        }
+    }
+
+
+
+}
+
+
+const homePage = () => window.location.href = "index.html"
+
+
+const redirect = document.getElementById("logo");
+redirect.onclick = homePage
