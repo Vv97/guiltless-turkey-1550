@@ -537,7 +537,7 @@ table {
 .badges{
      position: absolute;
      top: -7px;
-     right: -1px;
+     right:  0.9rem;
      width: 15px;
      height: 15px;
      font-size: 12px;
@@ -580,17 +580,18 @@ table {
 }
 
 .showcart {
-    top: 1.75rem;
+    top: 1.80rem;
     pointer-events: none;
-    left: -11.875rem;
+    left: -18rem;
     position: absolute;
     opacity: 0;
-    width: 15.625rem;
-    height:15.625rem;
+    width: 22rem;
+    height:23rem;
    background-color: #ffff;
    box-shadow: var(--shodow);
    z-index: 999;
 }
+
 
 
 .sign_in:hover .signin_dropdown , .cart:hover .showcart{ 
@@ -810,6 +811,80 @@ dt {
 dd a {
     color: #666666;
 }
+
+
+.showcart{
+    padding: 20px 15px;
+}
+
+.cartchild{
+    overflow: hidden;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+
+
+.cartTitle {
+    height: 32px;
+    font-size: 1rem;
+    overflow: auto;
+}
+
+.cartTitle::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.cartchild img {
+    float: left;
+    width: 20%;
+    object-fit: fill;
+}
+
+.cartprice{
+  margin-top: 12px;
+  font-size:  1rem;
+  color: #f30240;
+}
+
+
+
+.showchild{
+    overflow: auto;
+    height: 80%;
+}
+
+.showchild::-webkit-scrollbar {
+    width: 8px;
+}
+
+.showchild::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+
+.cartshowbtn{
+    background: #ffda00;
+    width: 100%;
+    padding: 0.8rem  0;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.showcartdetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-top: 15px;
+}
+
+
+
+
 
 
 
