@@ -23,7 +23,7 @@ let cart1= JSON.parse(localStorage.getItem("checkout"))||[];
            
 
             let price=document.createElement("h3");
-            price.innerText=`Price Rs :${el.price}`;
+            price.innerText=`Price ₹ :${el.price}`;
             cost+=+el.price;
 
             let btn=document.createElement("button");

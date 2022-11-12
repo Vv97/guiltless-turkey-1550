@@ -44,12 +44,12 @@ const append = (data) => {
     let title=document.createElement("p");
    title.innerText=el.title;
     let price=document.createElement("h5");
-    price.innerText=`Price Rs. : ${el.price}`;
+    price.innerText=`Price : ₹ ${el.price}`;
    let discount=document.createElement("h5");
    discount.setAttribute("class","dis_div");
-   discount.innerText=`${el.discount}% OFF`;
+   discount.innerText=`${el.discount} % OFF`;
    let actual_price=document.createElement("h4");
-   actual_price.innerText=`Offer Price: ${(el.price- (el.price*el.discount)/100)}`;
+   actual_price.innerText=`Offer Price : ₹ ${(el.price- (el.price*el.discount)/100)}`;
 
     let btn=document.createElement("button");
     btn.innerText="Add to Cart";
@@ -61,13 +61,14 @@ const append = (data) => {
     });
 }
 //code for Add to cart button
-        let dataarray=JSON.parse(localStorage.getItem("cart_items"))||[];
+        let dataArray=JSON.parse(localStorage.getItem("cart_items"))||[];
 
         function myFun(el){
-         
-        dataarray.push(el);
+         //window.location.href="./cart.html";
+        
+        dataArray.push(el);
       
-        let x=localStorage.setItem("cart_items",JSON.stringify(dataarray));
+        let x=localStorage.setItem("cart_items",JSON.stringify(dataArray));
         console.log(x);
     };
 //filter code with buttons

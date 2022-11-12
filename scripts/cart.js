@@ -7,14 +7,10 @@ const totalcount = () => {
 }
 totalcount(cart)
 
-
-
-
+let box2_div=document.getElementById("box2");
+box2_div.innerHTML = null;
 function display(cart){
   let totalprice = 0;
- 
-  let box2_div=document.getElementById("box2");
-       box2_div.innerHTML = null;
 
       cart.forEach(function(el,i){ 
 
@@ -28,11 +24,12 @@ function display(cart){
    title.innerText=el.title;
 
     let price=document.createElement("h5");
-    price.innerText=`Price Rs:${el.price}`;
-    totalprice+=+ el.price; // total price code
+    price.setAttribute("id","Price");
+    price.innerText=`Price : ₹ ${el.price}`;
+    totalprice+=+el.price; // total price code
 
    let discount=document.createElement("h5");
-   discount.innerText=`Dis% Rs:${el.discount}`;
+   discount.innerText=`Dis : ${el.discount}%`;
 
      let btn=document.createElement("button");
      btn.innerText="Buy Now";
@@ -42,35 +39,33 @@ function display(cart){
 
      let btn1=document.createElement("button");
      btn1.innerText="Remove";
-      btn1.onclick = () => {
-        Delete(el,i)
+      btn1.onclick = (event) => {
+        event.target.parentNode.remove();
+        Delete(i)
       }
 
      div.append(img_url,title,price,discount,btn,btn1);
         box2_div.append(div);
    });
-  // console.log(totalprice);
-  let cost = document.querySelector("#Totalcost>span");
-  cost.innerText = totalprice;
-}
-
-display(cart);
-
-
-
+   let cost = document.querySelector("#Totalcost>span");
+   cost.innerText = totalprice;
+   
+  
 // Delete function
-function Delete(el,i){
+function Delete(i){
     cart.splice(i,1);
     localStorage.setItem("cart_items",JSON.stringify(cart));
-    display(cart)
     totalcount(cart)
  
   
 }
+};
+
+display(cart);
 
 let checkArray=JSON.parse(localStorage.getItem("checkout"))||[];
 const buynow = (el,i) => {
-// window.location.href='././checkout.html';
+ window.location.href='././checkout.html';
  cart.splice(i,1);
 localStorage.setItem("cart_items",JSON.stringify(cart));
 display(cart);
