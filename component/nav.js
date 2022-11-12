@@ -297,7 +297,7 @@ const navbar = () => {
             <div class="signin_container">
                 <p>Welcome to Gearbest</p>
                 <div class="signbtn-cover">
-                    <a href="./signin.html" class="signbtn">sign in</a>
+                    <a href="../signin.html" class="signbtn">sign in</a>
                 </div>
 
                 <div class="sign_in_google">
@@ -312,7 +312,7 @@ const navbar = () => {
                     <p>Register on Gearbest: Earn 10 points</p>
 
                     <div class="registerbtn">
-                        <a href="./signup.html">Register</a>
+                        <a href="../signup.html">Register</a>
                     </div>
                 </div>
             </div>
@@ -1289,13 +1289,13 @@ const navbar = () => {
 
         </li>
         <li>
-            <a href="./superdeal.html" class="nav-link">SUPER DEALS</a>
+            <a href="../superdeal.html" class="nav-link">SUPER DEALS</a>
         </li>
         <li>
-            <a href="./Apponly.html" class="nav-link"> APP ONLY</a>
+            <a href="../Apponly.html" class="nav-link"> APP ONLY</a>
         </li>
         <li>
-            <a href="./new_arrival.html" class="nav-link">NEW ARRIVALS</a>
+            <a href="../new_arrival.html" class="nav-link">NEW ARRIVALS</a>
         </li>
     </ul>
 </div>`
