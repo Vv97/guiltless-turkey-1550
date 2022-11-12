@@ -16,7 +16,7 @@ for(let i=1;i<=button;i++){
     const getpaginatedData = async(clicked_button,limit) => {
     let response=await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/user?page=${clicked_button}&limit=${limit}`);
     let data= await response.json();
-    console.log(data);
+   // console.log(data);
     append(data);
     
     }
@@ -62,9 +62,9 @@ const append = (data) => {
 }
 //code for Add to cart button
 const add_to_cart= async(el)=>{
+
     try{
-  
-  
+
       let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart`,{
         method:"POST",
         body: JSON.stringify(el),
@@ -74,7 +74,7 @@ const add_to_cart= async(el)=>{
       });
       
       let data=await res.json();
-      console.log(data);
+ 
     
   
   
@@ -150,7 +150,7 @@ const filterData=async(content)=>{
             arr.push(el);
         }
        })
-      // console.log(arr)
+   
        append(arr);
     }catch(error){
          console.log(error);

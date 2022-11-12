@@ -25,7 +25,7 @@ function display(cart){
   let box2_div=document.getElementById("box2");
        box2_div.innerHTML = null;
 
-      cart.forEach(function(el,i){ 
+    cart.forEach(function(el){ 
 
 
         document.querySelector("#Totalitem>span").innerText=cart.length;
@@ -40,7 +40,7 @@ function display(cart){
 
     let price=document.createElement("h5");
     price.innerText=`Price Rs:${el.price}`;
-    totalprice+=+ el.price; // total price code
+    totalprice+=+el.price; // total price code
 
    let discount=document.createElement("h5");
    discount.innerText=`Dis% Rs:${el.discount}`;
@@ -71,6 +71,7 @@ function display(cart){
 
 // Delete function
 const removeProduct =async (el)=>{
+  
   let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart/${el.id}`,{
       method:"DELETE",
       headers:{
@@ -106,8 +107,8 @@ const buynow = async(el) => {
         "content-type":"application/json"
     }
   });
-   let updatedData=await res.json();
-   console.log(updatedData);
+   let data=await res.json();
+   console.log(data);
 
    window.location.href='././checkout.html';
  }
