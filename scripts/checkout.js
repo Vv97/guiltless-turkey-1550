@@ -75,7 +75,7 @@ const append = (data) =>{
 
 let arr=[];
 const placeOrder=async ()=>{
-
+  try{
   let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/checkout');
   let data=await res.json()
 //    console.log(data);
@@ -83,7 +83,7 @@ const placeOrder=async ()=>{
       console.log(el.id);
   })
 
-  try{}catch(error){
+  }catch(error){
     console.log(error);
   }
   

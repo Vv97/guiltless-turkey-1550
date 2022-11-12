@@ -54,23 +54,36 @@ const append = (data) => {
     let btn=document.createElement("button");
     btn.innerText="Add to Cart";
     btn.addEventListener("click",function(){
-        myFun(el);
+       add_to_cart(el);
     });
      div.append(img_url,title,price,discount,actual_price,btn);
     box2.append(div);
     });
 }
 //code for Add to cart button
-        let dataArray=JSON.parse(localStorage.getItem("cart_items"))||[];
-
-        function myFun(el){
-         //window.location.href="./cart.html";
-        
-        dataArray.push(el);
+const add_to_cart= async(el)=>{
+    try{
+  
+  
+      let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart`,{
+        method:"POST",
+        body: JSON.stringify(el),
+        headers:{
+          "content-type":"application/json"
+        }
+      });
       
-        let x=localStorage.setItem("cart_items",JSON.stringify(dataArray));
-        console.log(x);
-    };
+      let data=await res.json();
+      console.log(data);
+    
+  
+  
+    }catch(error){
+       console.log(error);
+    }
+  }
+
+
 //filter code with buttons
 //btn1
 let filterBtn=document.getElementById("consumer");
