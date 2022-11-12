@@ -35,9 +35,6 @@ const append = (data) =>{
            
            let image=document.createElement("img");
            image.src=el.img_url;
-           image.onclick=()=>{
-             displayDetails(el);
-           }
 
            let name=document.createElement("h3");
                name.innerText=el.title;
@@ -64,7 +61,10 @@ const append = (data) =>{
 
             let btn=document.createElement("button");
             btn.innerText="Checkout";
-           div.append(img_url,title,price,btn);
+
+            div1.append(image)
+            div2.append(title,price,btn)
+           div.append(div1,div2);
            box3_div.append(div);
         });
         
