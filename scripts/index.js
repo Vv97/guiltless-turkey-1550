@@ -457,6 +457,87 @@ function appendnew(data) {
       //let addTo=[];
       addTo.push(el);
       localStorage.setItem("addTo", JSON.stringify(addTo));
+  
+
+  let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user';
+
+  //get data
+  const getData=async()=>{
+      try{
+  
+         let res=await fetch(api_key);
+         let data=await res.json();
+         appendnew(data)
+         console.log("data",data);
+  
+      }catch(error){
+           console.log(error);
+      }
+  }
+  getData();
+
+function appendnew(data){
+  let recomforyou=document.getElementById("recomforyou");
+
+  data.forEach(function(el){
+    let card=document.createElement("div");
+    card.style.boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
+    card.style.padding="9px";
+
+    let off=document.createElement("div");
+        off.innerText=el.discount+"%  OFF";
+        off.style.color="white";
+        off.style.textAlign="center";
+        off.style.border="1px solid black"
+        off.style.boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset";
+        off.style.position="absolute";
+        off.style.height="50px";
+        off.style.width="50px";
+        off.style.backgroundColor="red";
+       off.style.padding="5px"
+        off.style.marginTop="-10px";
+        off.style.marginLeft="160px";
+        off.style.borderRadius="50%"
+
+        /* off.style.marginTop="-200px";
+        off.style.marginLeft="160px";  */
+
+    let image=document.createElement("img");
+    image.src=el.img_url;
+    image.style.width='90%';
+
+    let name=document.createElement("p");
+    name.innerText=el.title;
+    name.style.textAlign="center";
+    name.style.fontFamily="Verdana, Geneva, Tahoma, sans-serif";
+    name.style.marginTop="20px";
+    name.style.height="35px";
+    name.style.overflow="hidden";
+
+    let disPrice=document.createElement("p");
+    let discountedPrice=el.price-(((+el.discount)/100)*(+el.price))
+    console.log("dis_pr",discountedPrice);
+    disPrice.innerText="₹"+" "+Math.ceil(discountedPrice)+"/-";
+    disPrice.style.color="#F30240";
+    disPrice.style.fontSize="20px";
+    disPrice.style.marginTop="20px";
+
+
+    let price=document.createElement("p");
+    price.innerText="₹"+" "+el.price+"/-";
+    price.style.marginTop="10px";
+
+    let button=document.createElement("button");
+    button.innerText="ADD TO CART";
+    button.style.backgroundColor="#F30240";
+    button.style.border="0px";
+    button.style.color="white";
+    button.style.padding="5px";           
+    button.style.marginLeft="30%";
+    button.style.marginTop="10px";
+
+    button.onclick=()=>{
+      add_to_cart(el)
     }
 
 
@@ -473,3 +554,33 @@ function appendnew(data) {
   })
 
 }
+
+
+//Adding product to cart
+
+
+
+const add_to_cart= async(el)=>{
+
+  
+  
+  try{
+
+
+    let res= await fetch("https://636d5e73b567eed48ac032d6.mockapi.io/cart",{
+      method:"POST",
+      body: JSON.stringify(el),
+      headers:{
+        "content-type":"application/json"
+      }
+    });
+    
+    let data=await res.json();
+    console.log(data);
+  
+
+
+  }catch(error){
+     console.log(error);
+  }
+} 
