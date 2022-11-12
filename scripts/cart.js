@@ -1,11 +1,26 @@
-let cart= JSON.parse(localStorage.getItem("cart_items"))||[];
+
+//getting all the products which are present in cart
+
+let cart_api_key='https://636d5e73b567eed48ac032d6.mockapi.io/cart'
+
+const getData=async()=>{
+  try{
+
+     let res=await fetch(cart_api_key);
+     let data=await res.json()
+     display(data);
+  
+
+  }catch(error){
+       console.log(error);
+  }
+}
+getData();
+
+
 
 //total count code
 
-const totalcount = () => {
-  document.querySelector("#Totalitem>span").innerText=cart.length;
-}
-totalcount(cart);
 
 function display(cart){
   let totalprice = 0;
@@ -14,6 +29,9 @@ function display(cart){
        box2_div.innerHTML = null;
 
       cart.forEach(function(el,i){ 
+
+
+        document.querySelector("#Totalitem>span").innerText=cart.length;
 
     let div=document.createElement("div");
 
@@ -33,13 +51,13 @@ function display(cart){
      let btn=document.createElement("button");
      btn.innerText="Buy Now";
      btn.onclick= ()=>{
-     buynow(el,i);
+     buynow(el);
      }
 
      let btn1=document.createElement("button");
      btn1.innerText="Remove";
       btn1.onclick = () => {
-        Delete(el,i)
+        removeProduct(el)
       }
 
      div.append(img_url,title,price,discount,btn,btn1);
@@ -50,32 +68,59 @@ function display(cart){
   cost.innerText = totalprice;
 }
 
-display(cart);
+
+
+
+
 // Delete function
-function Delete(el,i){
-    cart.splice(i,1);
-    localStorage.setItem("cart_items",JSON.stringify(cart));
-    display(cart)
-    totalcount(cart)
- 
+const removeProduct =async (el)=>{
+  let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart/${el.id}`,{
+      method:"DELETE",
+      headers:{
+          "content-type":"application/json"
+      }
+  });
+
+  let deletedData= await res.json();
+  console.log(deletedData);
+
+
+  let response= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart`);
+  let data = await response.json();
+  console.log(data);
+
+  
+  display(data);
   
 }
 
-let checkArray=JSON.parse(localStorage.getItem("checkout"))||[];
-const buynow = (el,i) => {
- window.location.href='././checkout.html';
- cart.splice(i,1);
-localStorage.setItem("cart_items",JSON.stringify(cart));
-display(cart);
-totalcount(cart)
-checkArray.push(el);
-localStorage.setItem("checkout",JSON.stringify(checkArray));
-};
-    //Delete_array.push(el);
-   cart.splice(i,1);
-   //localStorage.setItem("deleted_array",JSON.stringify(Delete_array));
-   localStorage.setItem("cart_items",JSON.stringify(cart));
+
+//proceed to checkout
+
+const buynow = async(el) => {
+ 
+
+
+ try{
+  let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
+    method:"POST",
+    body: JSON.stringify(el),
+    headers:{
+        "content-type":"application/json"
+    }
+  });
+   let updatedData=await res.json();
+   console.log(updatedData);
+
+   window.location.href='././checkout.html';
+ }
+ catch(error){
+console.log(error);
 }
+};
+    
+   
+
 
 
 
