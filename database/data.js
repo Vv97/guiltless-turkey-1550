@@ -434,39 +434,6 @@ const append = (data) =>{
 }
 
 
-//filter
-let filterBtn=document.getElementById("btn");
- filterBtn.onclick = ()=>{
-    let container = document.getElementById("container")
-    container.innerHTML=null;
-let content=filterBtn.innerText;
-   filterData(content);
-}
-
-
-
-const filterData=async(content)=>{
-    let arr=[];
-    try{
-
-       let res=await fetch(api_key);
-       let data=await res.json()
-    
-       
-       data.forEach((el)=>{
-        if(el.category===content){
-            arr.push(el);
-        }
-       })
-       console.log(arr)
-       append(arr);
-       
-
-    }catch(error){
-         console.log(error);
-    }
-}
-
 
 
 
