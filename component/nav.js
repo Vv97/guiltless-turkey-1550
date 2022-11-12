@@ -297,7 +297,7 @@ const navbar = () => {
             <div class="signin_container">
                 <p>Welcome to Gearbest</p>
                 <div class="signbtn-cover">
-                    <a href="../signin.html" class="signbtn">sign in</a>
+                    <a href="./signin.html" class="signbtn">sign in</a>
                 </div>
 
                 <div class="sign_in_google">
@@ -312,7 +312,7 @@ const navbar = () => {
                     <p>Register on Gearbest: Earn 10 points</p>
 
                     <div class="registerbtn">
-                        <a href="../signup.html">Register</a>
+                        <a href="./signup.html">Register</a>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,7 @@ const navbar = () => {
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAn1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqJAAUEQD/2QAAAABJPgAAAAAAAAAAAAD/2gD/2gAAAAAAAAD/2gAAAAAAAAAAAAD/2QAAAAAAAAD/2wAAAAAAAAD/2QAAAAD/4wAAAAD/2gD51ADQsQCiigB0YwBGOwCQauaIAAAALnRSTlMA09hV4UL48rFIE/zazLuVfXZJIR39++3r5+fk29TJqKakm46JgG9lW1pNNjISfz/FPQAAALRJREFUKM+dz1cKwzAQRdHn7vRip/feX+r+1xaDLDx2Igi5XyMODCP8mcWkvpkYwVDIg4mabBhkxs9qinx+qZxe0ka+Mn01zNkq0JmWvmJwFU0Ah6GiIzuSekCLa0UReRM0BRrcQRXwLmgB1OmlVOND0AaoMk5pyaegPVCpIG3Ll6ATYtqaPHYFXZJ3mH2+2Aq6ekF8D79UGrklPTu27Qgakq6ex6QlyBVk56kdBNnCqlpo7g1Gxypv685O3AAAAABJRU5ErkJggg=="
             alt="">
 
-        <span><a class="gray" href="../cart.html">cart</a></span>
+        <span><a class="gray" href="./cart.html">cart</a></span>
 
         <span class="badges">
             0
@@ -1289,13 +1289,13 @@ const navbar = () => {
 
         </li>
         <li>
-            <a href="../superdeal.html" class="nav-link">SUPER DEALS</a>
+            <a href="./superdeal.html" class="nav-link">SUPER DEALS</a>
         </li>
         <li>
-            <a href="../Apponly.html" class="nav-link"> APP ONLY</a>
+            <a href="./Apponly.html" class="nav-link"> APP ONLY</a>
         </li>
         <li>
-            <a href="../new_arrival.html" class="nav-link">NEW ARRIVALS</a>
+            <a href="./new_arrival.html" class="nav-link">NEW ARRIVALS</a>
         </li>
     </ul>
 </div>`
