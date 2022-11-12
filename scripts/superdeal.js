@@ -5,6 +5,15 @@ let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user'
 let cart_api_key='https://636d5e73b567eed48ac032d6.mockapi.io/cart';
 
 
+
+
+
+import { navbar } from "../component/nav.js";
+
+let shownav = document.querySelector(".headIndex")
+
+shownav.innerHTML = navbar()
+
 const getData=async()=>{
     try{
 
