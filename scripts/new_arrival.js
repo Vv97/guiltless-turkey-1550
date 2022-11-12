@@ -1,3 +1,9 @@
+import {navbar} from "../component/nav.js";
+
+let showdata = document.querySelector(".headIndex");
+showdata.innerHTML = navbar()
+
+
 let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user';
 //get data
 const getData=async()=>{
