@@ -99,6 +99,9 @@ const add_to_cart= async(el)=>{
     
     let data=await res.json();
     console.log(data);
+
+    alert('order placed sucessfully');
+    window.location.reload();
   
 
 
