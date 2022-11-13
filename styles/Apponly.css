@@ -6,7 +6,7 @@ body{
 #box1 {
    
     display: grid;
-    grid-template-columns: repeat(5,400px);
+    grid-template-columns: repeat(5,280px);
     border: 1px solid rgb(227, 204, 72);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
    
