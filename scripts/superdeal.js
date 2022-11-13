@@ -105,103 +105,71 @@ const append = (data) =>{
 
 
 
+
+
+
 // dispaly data of a single product when clicking on product div
 
 
 const displayDetails=(el)=>{
-  window.location.dsabled=true;
-  let container=document.getElementById("superdeal_container");
-  container.innerHTML=null;
-  let sort_div=document.getElementById("subNav_bar");
-  sort_div.innerHTML=null;
+  
+  let sub_navbar=document.getElementById("subNav_bar");
+  sub_navbar.innerHTML=null;
+  
+
+  let container = document.getElementById("superdeal_container")
+    container.innerHTML=null;
 
 
-let div1=document.createElement("div");
-div1.setAttribute("class","imgdiv");
-let image=document.createElement("img");
-image.src=el.img_url;
+    let div = document.createElement("div");
+    div.setAttribute("id", "details_div");
 
-let div2=document.createElement("div");
-div2.setAttribute("class","detailsdiv");
+    let div1 = document.createElement("div");
 
+    let div2 = document.createElement("div");
+    
+    
+    let image=document.createElement("img");
+    image.src=el.img_url;
 
+    let name=document.createElement("h3");
+        name.innerText=el.title;
 
-let div2_1=document.createElement("div");
-div2_1.setAttribute("class","div2_1");
-div2_1.innerText=el.title;
+    let price_tag= document.createElement("h4");
+        price_tag.setAttribute("class", "final_price");
+        let discounted_price=+el.price-((+el.discount)*(+el.price))/100;
+        price_tag.innerText=`Rs:- ${Math.ceil(discounted_price)}`;
+    
+    let mrp=document.createElement("h5");
+        mrp.innerText=`M.R.P. Rs:- ${el.price}`;
+        
 
-let div2_2=document.createElement("div");
-div2_2.setAttribute("class","div2_2");
+    let flash_sale=document.createElement("p");
+      flash_sale.innerText=`All offers and coupon`;
 
+     let btn=document.createElement("button");
+     btn.innerText="Add to Cart";
+     btn.onclick=()=>{
+      add_to_cart();
+     }
 
+     let back_btn=document.createElement("h6");
+     back_btn.innerText="<= Back to Superdeal page";
+     back_btn.onclick=()=>{
+      backtosuperdeal();
+     }
 
-let div2_2_1=document.createElement("div");
-let h4=document.createElement("h4");
-h4.innerText="Gain more with offers (2)";
-let ul=document.createElement("ul");
-let p1=document.createElement("p");
-p1.innerText="Shop for Rs.50,000 & above and Get Instant Discount Up To Rs.20,000.";
-let p2=document.createElement("p");
-p2.innerText="Get Cashback upto Rs. 1,000 on Mobikwik Wallet.";
+     div1.append(image)
+     div2.append(name,price_tag,mrp,flash_sale,btn,back_btn)
+    div.append(div1,div2);
+    container.append(div);
 
-let warrenty=document.createElement("h4");
-warrenty.innerText="WARRANTY";
-warrenty.style.marginTop="50px";
-let warrentytext=document.createElement("p");
-warrentytext.innerText="Warranty: 1 Year manufacturer warranty.";
-
-
-let returnpolicy=document.createElement("h4");
-returnpolicy.innerText="Return Policy";
-returnpolicy.style.marginTop="50px";
-let returnpolicytext1=document.createElement("p");
-returnpolicytext1.innerText="Items are eligible for return within 7 Days of Delivery.";
-let returnpolicytext2=document.createElement("p");
-returnpolicytext2.innerText="All accessories, product & packaging need to be returned in original condition.";
-
-
-ul.append(p1,p2);
-div2_2_1.append(h4,ul,warrenty,warrentytext,returnpolicy,returnpolicytext1,returnpolicytext2);
-
-
-
-div2_2_1.setAttribute("class","div2_2_1");
-
-let div2_2_2=document.createElement("div");
-div2_2_2.setAttribute("class","div2_2_2");
-div2_2_2.style.margin="10px";
-
-
-let price=document.createElement("h2");
-price.innerText="Offer Price: "+el.price;
-price.style.color="green";
-let limited=document.createElement("p");
-limited.innerText="'LIMITED OFFER' GRAB THE DEAL";
-limited.style.margin="10px";
-
-
-
-div2_2_2.append(price,limited);
-
-let cartbutton=document.createElement("button");
-cartbutton.innerText="ADD TO CART";
-
-cartbutton.style.color="white";
-cartbutton.style.backgroundColor="#e42529";
-cartbutton.style.border="none";
-cartbutton.style.padding="4px";
-cartbutton.style.borderRadius="20px";
-cartbutton.style.width="50%";
-cartbutton.style.marginLeft="25%";
-cartbutton.style.height="30px";
-
-div2_2.append(div2_2_1,div2_2_2);
-div2.append(div2_1,div2_2,cartbutton);
-div1.append(image);
-container.append(div1,div2);
 }
 
-
+//back to superdeal page from details
+const backtosuperdeal=()=>{
+  window.location.href="./superdeal.html";
+}
 
 
 
@@ -325,7 +293,8 @@ const add_to_cart= async(el)=>{
     let data=await res.json();
     console.log(data);
   
-
+    alert("Product added to cart")
+    window.location.reload();
 
   }catch(error){
      console.log(error);
