@@ -36,7 +36,7 @@ function display(cart){
     cart.forEach(function(el){ 
 
 
-        document.querySelector("#Totalitem>span").innerText=cart.length;
+        document.querySelector("#Totalitem>span").innerText=cart.length||0;
 
     let div=document.createElement("div");
 
