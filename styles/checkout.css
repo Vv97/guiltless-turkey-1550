@@ -75,6 +75,8 @@
 
 #finalCheck>button{
   font-size: larger;
+  background-color: green;
+  color: #fff;
 }
 
   #total_mrp{
@@ -83,4 +85,31 @@
 
   #amountTobepaid{
     font-weight:900
+  }
+
+
+
+/* navbar additional properties */
+
+  .headnav  {
+    display: flex;
+    clear: both;
+    text-align: center;  
+    background-color: #fff;
+    white-space: nowrap;
+  }
+  
+  .headrop{
+    position: absolute;
+    top:  2.813rem;
+    width: 100%;
+    display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-catle:hover .headrop{
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
   }
