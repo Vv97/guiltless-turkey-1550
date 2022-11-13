@@ -1,5 +1,14 @@
 //get data which customer is aabout to buy;
 
+import { navbar } from "../component/nav.js";
+
+let shownav = document.querySelector(".headIndex")
+
+shownav.innerHTML = navbar()
+
+
+
+
 const getData=async()=>{
    try{
 
@@ -17,7 +26,7 @@ const getData=async()=>{
 getData();
 let count=0;
 let total_mrp=0;
-let cart_total=0;    
+let cart_total=0;   
 
 const append = (data) =>{
    let container = document.getElementById("checkout_container")
@@ -27,7 +36,7 @@ const append = (data) =>{
 
    data.forEach((el)=>{
     count++;
-    arr.push(el);
+    
        let div = document.createElement("div");
            div.setAttribute("class", "item");
 
@@ -78,7 +87,7 @@ const append = (data) =>{
       let totalNoitem=document.getElementById("count");
       totalNoitem.innerText=count;
 
-      console.log(arr);
+      
   }
 
    
@@ -94,16 +103,6 @@ place_order.onclick=()=>{
 
 
 const placeOrder=async ()=>{
-
-  let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/checkout');
-  let data=await res.json()
-//    console.log(data);
-  data.forEach((el)=>{
-      console.log(el.id);
-  })
-
-  try{}catch(error){
-    console.log(error);
-  }
+window.location.href="payment.html"
   
 }
