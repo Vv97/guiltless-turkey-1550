@@ -347,7 +347,7 @@ const navbar = () => {
                     <p class="numberoi">0</p>
                     <p class="cartshowprice"></p>
                 </div>
-                <a href="../cart.html">
+                <a href="./cart.html">
                     <div class="cartshowbtn">
                         View My Cart
                     </div>

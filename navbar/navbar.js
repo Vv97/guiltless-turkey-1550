@@ -437,9 +437,6 @@ cartcount()
 
 
 
-const logoclick = document.querySelector(".logo");
-logoclick.onclick = () => window.location.href = "index.html"
-
 
 
 
