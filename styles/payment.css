@@ -6,7 +6,7 @@ body{
     box-sizing: border-box;
 }
 #payForm{
-    height: 600px;
+    height: 450px;
     width: 40%;
     border: 0px solid red;
     margin: auto;
@@ -141,9 +141,10 @@ body{
     margin-left: 20px;
 }
 #payBtn{
-    width: 100%;
-    border: 0px solid red;
+    width: 40%;
+
     margin: auto;
+    margin-bottom: 100px;
      
 }
 #payBtn > img{
@@ -152,7 +153,7 @@ body{
     margin-left: 50px;
     margin-top: 5px;
 }
-#payBtn > button:nth-child(2){
+/* #payBtn > button:nth-child(2){
     width: 70%;
     font-size: 28px;
     height: 50px;
@@ -161,8 +162,8 @@ body{
     border-radius: 5px;
     color: white;
     
-}
-#payBtn > button:nth-child(3){
+} */
+/* #payBtn > button:nth-child(3){
     width: 29%;
     font-size: 28px;
     height: 50px;
@@ -170,7 +171,7 @@ body{
     border: none;
     border-radius: 5px;
     color: white;
-}
+} */
 #lastCheck{
     display: flex;
     gap: 10px;
@@ -178,4 +179,24 @@ body{
 #lstchkTik{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
+}
+#payBtn{
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#payBtn > button{
+    width: 40%;
+    height: 50px;
+    outline: none;
+    border: none;
+    color: #ffff;
+}
+
+#payBtn button:nth-child(1){
+    background-color: green;
+}
+
+#payBtn button:nth-child(2){
+    background-color: red;
 }
