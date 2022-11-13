@@ -25,7 +25,7 @@ console.log('data:', data)
  container.innerHTML=null;
     data.forEach(function(el){
    let div=document.createElement("div");
-//    div.style.onhover="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;";
+      
 
 
    let img=document.createElement("img");
@@ -63,7 +63,7 @@ console.log('data:', data)
     btn.setAttribute("class","cart_button");
     btn.onclick=()=>{
       add_to_cart(el);
-      console.log("prashant")
+     
     }
 
     price_div.append(p1,btn)
@@ -82,6 +82,7 @@ console.log('data:', data)
 
 
 const add_to_cart= async(el)=>{
+// console.log('el:', el)
 
   
   
