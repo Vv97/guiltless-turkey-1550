@@ -31,6 +31,7 @@ body {
 .headIndex{
     max-width: 90%;
     padding: 20px;
+    padding-bottom: 0px;
     margin: 0 auto;
 }
 
@@ -721,6 +722,7 @@ table {
     top:  2.813rem;
     width: 100%;
     display: inline-block;
+    z-index: 1;
 }
 
 .headrop >  li {
@@ -728,6 +730,7 @@ table {
     padding: 9.74px 10px;
     text-align: left;
     background: #ccc;
+    background:#fff;
 }
 
 .headrop > li:hover {
@@ -743,9 +746,9 @@ table {
     display: none;
     position: absolute;
     top: 0;
-    left: 15.35rem;
+    left: 13.9rem;
     padding-left: 45px;
-    width: 59.4375rem;
+    width: 58rem;
     height: 26.25rem;
     line-height: 22px;
     background-color: #fff;
@@ -774,9 +777,8 @@ table {
 .headCate_childColumn {
     display: inline-block;
     vertical-align: top;
-    width: 14.55rem;
+    width: 14rem;
     font-size: 14px;
-
 }
 
 

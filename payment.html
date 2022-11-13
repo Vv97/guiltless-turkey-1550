@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./styles/payment.css">
+</head>
+
+<body>
+    <form id="payForm">
+
+        <h2>PAYMENT PROCESS</h2>
+        <br>
+        <div id="tickCard">
+            <div id="cardOpt">
+                <input type="checkbox">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1U5-gNEAaT7KWlo4L7qBwOcPD8aguCD5RA&usqp=CAU" />
+            </div>
+
+            <div id="cashOpt">
+                <input type="checkbox">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbG6kHpsjciCow6_iFj2uVrkQelSs7wk9NkQ&usqp=CAU" />
+            </div>
+
+            <div id="cheqOpt">
+                <input type="checkbox">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgDXHv1IEAF8EwEfUJenzwgCxHyHhcU3ytQ&usqp=CAU" />
+            </div>
+
+            <div id="other">
+                <input type="checkbox">
+                <p>Pay Later</p>
+            </div>
+
+            <div id="other">
+                <input type="checkbox">
+                <p>OTHER</p>
+            </div>
+
+
+        </div>
+
+        <input id="nameCard" type="text" placeholder="Name on Card" />
+
+        <div id="cardDetl">
+            <input type="number" placeholder="Card Number" />
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrPdY7KxZn90UFPfitE-hcIDRRO9wkW1j9EQ&usqp=CAU" />
+            <input type="number" placeholder="Security Code" />
+        </div>
+
+        <div id="expire">
+            <p>Expires</p>
+            <input type="number" placeholder="Month" />
+            <input type="number" placeholder="Year" />
+            <input placeholder="Zip Code" />
+
+        </div>
+        <br>
+        <div id="postal">
+            <input type="checkbox" />
+            <p>No Zip/Postal Code</p>
+        </div>
+
+        <p id="Add">+ Add A Booking Note</p>
+
+
+
+    </form>
+
+
+    <div id="payBtn">
+        <button id="payButton">PAYMENT</button>
+        <button class="backBtn">BACK</button>
+    </div>
+
+    <div id="lastCheck">
+        <input type="checkbox"/>
+    <p id="lstchkTik">Do not charge credit card now</p>
+    </div>
+    
+        <div id="payBtn">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3r7HCv392Lv89oPhs7-OFk0s5fvepos85xg&usqp=CAU" />
+            <button> PAYMENT</button>
+            <button>BACK</button>
+        </div>
+
+        <div id="lastCheck">
+            <input type="checkbox" />
+            <p id="lstchkTik">Do not charge credit card now</p>
+        </div>
+
+
+
+
+
+
+    </form>
+
+
+</body>
+<script src="./scripts/payment.js"></script>
+
+</html>

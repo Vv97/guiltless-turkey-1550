@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
-    <link rel="stylesheet" href="./Apponly.css">
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <script src="https://kit.fontawesome.com/acd5ea6f23.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="navbar"></div>
-   <div id="Count">
-      <h4 id="count">Toatal Items : <span></span></h4>
-      <h4 id="totalprice">Total Cart Value : <span></span></div>
-    </div>
+    <div class="headIndex"></div>
     <div id="box3"></div>
 
     <div id="checkout_container">
     </div>
     <div id="finalCheck">
-        <h2>Total Amount:<span></span></h2>
-        <h3>You Saved:<span></span></h3>
-        <h1>Amount to be Paid:<span></span></h1>
+        <h4>Toatal No of Items : <span id="count"></span></h4>
+        <h2>Total Amount Rs   :<span id="total_mrp">0</span></h2>
+        <h3>You will Save Rs   :<span id="saved_amount"></span></h3>
+        <h1>Amount to be Paid Rs   :<span id="amountTobepaid"></span></h1>
         <button id="order_place">Proceed to Payment</button>
     </div>
     
 </body>
 </html>
-<script src="./checkout.js"></script>
+<script src="./navbar/navbar.js" type="module"></script>
+<script type="module"  src="./scripts/checkout.js"></script>

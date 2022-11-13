@@ -34,33 +34,82 @@
     }
 
 
-    #finalCheck{
-        margin-left: 40%;
-        border:1px solid red;
-        width:20%;
-        height: 200px;
-        margin:auto;
-        margin-top: 10px;
-        padding-left: 40%;
-
-    }
+   
   
   
   
     #checkout_container h3{
-      font-size: 14px;
-      height:30px;
+      font-size: 20px;
+      height:50px;
       color: #000;
-      overflow:hidden;
-      word-wrap: break-word;
-      word-break: break-word;
     }
   
     #checkout_container h5{
-      font-size: 12px;
+      font-size: 15px;
       color:  #666;;
     }
   
     #checkout_container p{
       color:rgb(172, 12, 12)
     }
+   
+    .final_price{
+      font-size: 25px;
+      margin-top: 30px;
+      font-weight: 900;
+    }
+
+
+
+
+    #finalCheck{
+      margin-right: 0;
+      padding-right: 0;
+      border:1px solid red;
+      width:40%;
+      height: 300px;
+      margin:auto;
+      margin-top: 10px;
+      margin-bottom: 100px;
+  }
+
+#finalCheck>button{
+  font-size: larger;
+  background-color: green;
+  color: #fff;
+}
+
+  #total_mrp{
+    margin-right: 0;
+  }
+
+  #amountTobepaid{
+    font-weight:900
+  }
+
+
+
+/* navbar additional properties */
+
+  .headnav  {
+    display: flex;
+    clear: both;
+    text-align: center;  
+    background-color: #fff;
+    white-space: nowrap;
+  }
+  
+  .headrop{
+    position: absolute;
+    top:  2.813rem;
+    width: 100%;
+    display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-catle:hover .headrop{
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+  }
