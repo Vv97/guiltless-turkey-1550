@@ -189,5 +189,6 @@ const remove=()=>{
    removeProduct(el);
    
 }
-window.location.reload();
+alert("Order Successfull Placed")
+window.location.href="index.html";
 }
