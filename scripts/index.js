@@ -62,7 +62,8 @@ const collpicAppend = (data) => {
     price_card.innerText = "₹" + " " + el.price + "/-";
     price_card.style.height = "40px";
     price_card.style.width = "100%";
-    price_card.style.alignItems = "baseline"
+    price_card.style.marginTop="30px"
+    // price_card.style.alignItems = "baseline"
     price_card.style.background = "red";
     price_card.style.color = "white";
     price_card.style.fontSize = "20px";
@@ -146,14 +147,16 @@ let superpicAppend = (data) => {
     off.innerText = el.off;
     off.style.color = "white";
     off.style.textAlign = "center";
-
+    off.style.border="1px solid black";
     off.style.position = "absolute";
     off.style.height = "50px";
     off.style.width = "50px";
     off.style.backgroundColor = "red";
     off.style.position = "absolute";
     off.style.marginTop = "-185px";
-    /* off.style.marginRight="30%" */
+    off.style.padding="5px";
+    //  off.style.marginRight="30%";
+    off.style.marginLeft="-5px"
     off.style.borderRadius = "50%"
 
     let img = document.createElement("img");
@@ -170,7 +173,9 @@ let superpicAppend = (data) => {
     cutprice.innerText = "₹" + " " + el.cutprice + "/-";
     cutprice.style.textDecoration = "line-through";
     cutprice.style.color = "gray";
-    cutprice.style.marginBottom = "-20px"
+    cutprice.style.marginTop="20px";
+    cutprice.style.marginBottom = "8px"
+    cutprice.style.fontSize="20px"
 
     let price = document.createElement("p");
     price.innerText = "₹" + " " + el.price + "/-";
@@ -289,32 +294,36 @@ let pro_data = [
   {
     url: "https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16643/goods_thumb_220-v1/4e5c7e4add41.jpg",
     name: "Clearance Sale",
-    cutprice: "67.23",
-    price: 34.94,
+    cutprice: "101.23",
+    price: 434.94,
     off: "12% OFF"
   },
   {
     url: "https://gloimg.gbtcdn.com/soa/gb/store/6878025592978206720/16513/goods_thumb_220-v1/e198e1605f41.jpg",
     name: "Eight Hours Store",
-    price: 8.90,
+    cutprice: "100.23",
+    price: 400.90,
     off: "32% OFF",
   },
   {
     url: "https://gloimg.gbtcdn.com/soa/gb/item/6878402251153666048/16589/goods_thumb_220-v5/fc175520613e.jpg",
     price: 110000,
     name: "Cell Phone Accessories",
+    cutprice: "2000.50",
     off: "9% OFF",
   },
   {
     url: "https://gloimg.gbtcdn.com/soa/gb/store/6615272824267153408/16424/goods_thumb_220-v4/e6491a442006.jpg",
     price: 10000,
     name: "Cell Phone Accessories",
+    cutprice: "300.23",
     off: "70% OFF",
   },
   {
     url: "https://gloimg.gbtcdn.com/soa/gb/item/6878024229519028224/16490/goods_thumb_220-v2/588fd1bac1de.jpg",
     price: 2000,
     name: "Cell Phone Accessories",
+    cutprice: "1000.00",
     off: "33% OFF",
   }
 
@@ -341,12 +350,16 @@ function displayDOM(data) {
     cutprice.innerText = "₹" + " " + el.cutprice + "/-";
     cutprice.style.textDecoration = "line-through";
     cutprice.style.color = "gray";
-    cutprice.style.marginBottom = "-20px"
+    cutprice.style.marginBottom = "15px";
+    cutprice.style.marginTop="10px";
+    cutprice.style.fontSize="20px";
+    cutprice.style.textAlign="center";
 
     let price = document.createElement("p");
     price.innerText = "₹" + " " + el.price + "/-";
     price.style.color = "#F30240";
-    price.style.fontSize = "25px"
+    price.style.fontSize = "25px";
+    price.style.textAlign="center"
 
     card.append(image, cutprice, price);
     pagination.append(card);
@@ -374,7 +387,7 @@ for (let i = 1; i <= page; i++) {
 }
 
 
-
+/*
 let api_key = 'http://localhost:8080/posts';
 
 //get data
@@ -416,7 +429,7 @@ function appendnew(data) {
     off.style.borderRadius = "50%"
 
     /* off.style.marginTop="-200px";
-    off.style.marginLeft="160px";  */
+    off.style.marginLeft="160px";  
 
     let image = document.createElement("img");
     image.src = el.img_url;
@@ -456,7 +469,7 @@ function appendnew(data) {
       console.log("add");
       //let addTo=[];
       addTo.push(el);
-      localStorage.setItem("addTo", JSON.stringify(addTo));
+      localStorage.setItem("addTo", JSON.stringify(addTo));  */
   
 
   let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user';
