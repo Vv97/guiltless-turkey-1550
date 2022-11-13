@@ -1,3 +1,12 @@
+
+import { navbar } from "../component/nav.js";
+
+let showmav = document.querySelector(".headIndex")
+
+showmav.innerHTML = navbar()
+
+
+
 let wrapper = document.querySelector(".wrapper");
 let select_btn = document.querySelector(".select_btn");
 let option = document.querySelector(".option");
@@ -6,6 +15,8 @@ let option1 = document.querySelector(".option1");
 let wrapper1 = document.querySelector(".wrapper1");
 let select_btn1 = document.querySelector(".select_btn1");
 let changename_1 = document.querySelector(".changename_1")
+
+
 
 const country_list = ["india", "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua ; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin"];
 
@@ -311,6 +322,7 @@ Addcountry()
 
 function Addname1(countryname, currency_code) {
     let val = countryname + currency_code;
+    console.log(val)
     wrapper1.classList.remove("active")
     changename_1.textContent = val;
 }
@@ -359,3 +371,77 @@ select_btn.onclick = () => {
 select_btn1.onclick = () => {
     wrapper1.classList.toggle("active")
 }
+
+
+const showcartdata = (res) => {
+    let totalprice = 0;
+
+    let showdata = document.querySelector(".showchild");
+
+    res.forEach(({ title, price, img_url }) => {
+        let div = document.createElement("div");
+        div.className = "cartchild";
+
+        let ptitle = document.createElement("p");
+        ptitle.className = "cartTitle"
+        ptitle.textContent = title;
+
+        let img = document.createElement("img");
+        img.src = img_url;
+
+        let pprice = document.createElement("p");
+        totalprice += + price;
+        pprice.className = "cartprice"
+        pprice.innerText = `price : $${price}`;
+
+        if (res.length > 1) {
+            div.style.borderBottom = "1px solid #ccc"
+        }
+
+
+        showdata.append(div);
+        div.append(img, ptitle, pprice)
+    })
+
+
+    let showprice = document.querySelector(".cartshowprice");
+    showprice.textContent = `Total : ${totalprice} `;
+
+
+}
+
+
+
+const cartcount = async () => {
+    try {
+
+        let fetchdata = await fetch("https://636d5e73b567eed48ac032d6.mockapi.io/cart");
+        let getdata = await fetchdata.json();
+        const showcount = document.querySelector(".badges");
+        console.log(getdata.length)
+        showcount.textContent = getdata.length
+
+        let showcountdata = document.querySelector(".numberoi");
+        showcountdata.textContent = `${getdata.length} Item(s)`
+
+        showcartdata(getdata)
+    } catch (err) {
+        console.log(err)
+    }
+
+
+}
+
+cartcount()
+
+
+
+
+const logoclick = document.querySelector(".logo");
+logoclick.onclick = () => window.location.href = "index.html"
+
+
+
+
+
+

@@ -1,3 +1,9 @@
+import {navbar} from "../component/nav.js";
+
+let showdata = document.querySelector(".headIndex");
+showdata.innerHTML = navbar()
+
+
 let api_key='https://636d5e73b567eed48ac032d6.mockapi.io/user';
 //get data
 const getData=async()=>{
@@ -34,7 +40,7 @@ console.log('data:', data)
    price_div.setAttribute("id","price_cart")
 
    let p1=document.createElement("p");
-    p1.innerText=`Rs ${el.price}`;
+    p1.innerText=`₹ ${el.price}`;
     p1.setAttribute("class","rupees")
 
     let off=document.createElement("div");
@@ -55,6 +61,10 @@ console.log('data:', data)
     let btn=document.createElement("button");
     btn.innerText="Add to Cart" 
     btn.setAttribute("class","cart_button");
+    btn.onclick=()=>{
+      add_to_cart(el);
+      console.log("prashant")
+    }
 
     price_div.append(p1,btn)
     div.append(img,off,p,price_div)
@@ -65,6 +75,36 @@ console.log('data:', data)
 
     
    }
+
+
+   // Adding product to cart
+
+
+
+const add_to_cart= async(el)=>{
+
+  
+  
+  try{
+
+
+    let res= await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/cart',{
+      method:"POST",
+      body: JSON.stringify(el),
+      headers:{
+        "content-type":"application/json"
+      }
+    });
+    
+    let data=await res.json();
+    console.log(data);
+  
+
+
+  }catch(error){
+     console.log(error);
+   }
+}
 
 
 

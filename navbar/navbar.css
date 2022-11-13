@@ -31,6 +31,7 @@ body {
 .headIndex{
     max-width: 90%;
     padding: 20px;
+    padding-bottom: 0px;
     margin: 0 auto;
 }
 
@@ -537,7 +538,7 @@ table {
 .badges{
      position: absolute;
      top: -7px;
-     right: -1px;
+     right:  0.9rem;
      width: 15px;
      height: 15px;
      font-size: 12px;
@@ -580,17 +581,18 @@ table {
 }
 
 .showcart {
-    top: 1.75rem;
+    top: 1.80rem;
     pointer-events: none;
-    left: -11.875rem;
+    left: -18rem;
     position: absolute;
     opacity: 0;
-    width: 15.625rem;
-    height:15.625rem;
+    width: 22rem;
+    height:23rem;
    background-color: #ffff;
    box-shadow: var(--shodow);
    z-index: 999;
 }
+
 
 
 .sign_in:hover .signin_dropdown , .cart:hover .showcart{ 
@@ -720,6 +722,7 @@ table {
     top:  2.813rem;
     width: 100%;
     display: inline-block;
+    z-index: 1;
 }
 
 .headrop >  li {
@@ -727,6 +730,7 @@ table {
     padding: 9.74px 10px;
     text-align: left;
     background: #ccc;
+    background:#fff;
 }
 
 .headrop > li:hover {
@@ -742,9 +746,9 @@ table {
     display: none;
     position: absolute;
     top: 0;
-    left: 15.35rem;
+    left: 13.9rem;
     padding-left: 45px;
-    width: 59.4375rem;
+    width: 58rem;
     height: 26.25rem;
     line-height: 22px;
     background-color: #fff;
@@ -773,9 +777,8 @@ table {
 .headCate_childColumn {
     display: inline-block;
     vertical-align: top;
-    width: 14.55rem;
+    width: 14rem;
     font-size: 14px;
-
 }
 
 
@@ -810,6 +813,80 @@ dt {
 dd a {
     color: #666666;
 }
+
+
+.showcart{
+    padding: 20px 15px;
+}
+
+.cartchild{
+    overflow: hidden;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+
+
+.cartTitle {
+    height: 32px;
+    font-size: 1rem;
+    overflow: auto;
+}
+
+.cartTitle::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.cartchild img {
+    float: left;
+    width: 20%;
+    object-fit: fill;
+}
+
+.cartprice{
+  margin-top: 12px;
+  font-size:  1rem;
+  color: #f30240;
+}
+
+
+
+.showchild{
+    overflow: auto;
+    height: 80%;
+}
+
+.showchild::-webkit-scrollbar {
+    width: 8px;
+}
+
+.showchild::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+
+.cartshowbtn{
+    background: #ffda00;
+    width: 100%;
+    padding: 0.8rem  0;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.showcartdetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-top: 15px;
+}
+
+
+
+
 
 
 
