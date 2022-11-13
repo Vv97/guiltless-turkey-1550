@@ -103,27 +103,7 @@ const removeProduct =async (el)=>{
 
 //proceed to checkout
 
-// const buynow = async(el) => {
- 
 
-
-//  try{
-//   let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
-//     method:"POST",
-//     body: JSON.stringify(el),
-//     headers:{
-//         "content-type":"application/json"
-//     }
-//   });
-//    let data=await res.json();
-//    console.log(data);
-
-//    window.location.href='././checkout.html';
-//  }
-//  catch(error){
-// console.log(error);
-// }
-// };
 
 const checkout=document.getElementById("checkout");
 checkout.onclick=()=>{
@@ -135,38 +115,42 @@ Add_checkout();
 let arr=[];
 
 const checkout_data=async()=>{
-    try{
- 
-        let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/cart');
-        let data=await res.json()
-        console.log(data);
-       data.forEach((el)=>{
-         arr.push(el);
-       })
-     
-  
-     }catch(error){
-          console.log(error);
-     }
+  try{
+
+      let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/cart');
+      let data=await res.json()
+      // console.log(data);
+     data.forEach((el)=>{
+       arr.push(el);
+     })
+   
+
+   }catch(error){
+        console.log(error);
+   }
 }
 
 console.log("arr:",arr)
 checkout_data();
 
-
 //Adding cart data to checkout page
+
 const Add_checkout=()=>{
   for(let i=0; i<arr.length; i++){
    let el=arr[i];
    proceed_to_checkout(el);
-   
+   removeProductforCart(el);
+  }
 }
-// window.location.reload();
-}
+
+
+
+
+
+
 
 
 const proceed_to_checkout= async(el)=> {
-  window.location.href='checkout.html';
   try{
     let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
       method:"POST",
@@ -184,5 +168,23 @@ const proceed_to_checkout= async(el)=> {
   console.log(error);
   }
 
+}
+
+
+
+
+//removing from cart
+const removeProductforCart =async (el)=>{
+  let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart/${el.id}`,{
+      method:"DELETE",
+      headers:{
+          "content-type":"application/json"
+      }
+  });
+
+  let deletedData= await res.json();
+  // console.log(deletedData);
+
+  
 }
 
