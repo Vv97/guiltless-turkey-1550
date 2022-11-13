@@ -1,3 +1,8 @@
+import {navbar} from "../component/nav.js";
+
+let showdata = document.querySelector(".headIndex");
+showdata.innerHTML = navbar()
+ 
  // paginating code
 let buttons_div=document.getElementById("buttons");
 const createbuttons = (Toatal_images,images_per_page) => {
