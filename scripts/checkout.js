@@ -79,10 +79,10 @@ const append = (data) =>{
       show_total.textContent=total_mrp;
 
       let saved_amount=document.getElementById("saved_amount");
-      saved_amount.innerText=total_mrp-cart_total;
+      saved_amount.innerText=Math.round(total_mrp-cart_total);
 
       let amount_tobe_paid=document.getElementById("amountTobepaid");
-      amount_tobe_paid.innerText=cart_total;
+      amount_tobe_paid.innerText=Math.round(cart_total);
 
       let totalNoitem=document.getElementById("count");
       totalNoitem.innerText=count;
@@ -103,16 +103,6 @@ place_order.onclick=()=>{
 
 
 const placeOrder=async ()=>{
-
-  let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/checkout');
-  let data=await res.json()
-//    console.log(data);
-  data.forEach((el)=>{
-      console.log(el.id);
-  })
-
-  try{}catch(error){
-    console.log(error);
-  }
+window.location.href="payment.html";
   
 }
