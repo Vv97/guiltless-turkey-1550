@@ -1,3 +1,11 @@
+import { navbar } from "../component/nav.js";
+
+let shownav = document.querySelector(".headIndex")
+
+shownav.innerHTML = navbar()
+
+
+
 //getting all the products which are present in cart
 
 let cart_api_key='https://636d5e73b567eed48ac032d6.mockapi.io/cart'
@@ -25,7 +33,7 @@ function display(cart){
   let box2_div=document.getElementById("box2");
        box2_div.innerHTML = null;
 
-      cart.forEach(function(el,i){ 
+    cart.forEach(function(el){ 
 
 
         document.querySelector("#Totalitem>span").innerText=cart.length;
@@ -40,7 +48,7 @@ function display(cart){
 
     let price=document.createElement("h5");
     price.innerText=`Price Rs:${el.price}`;
-    totalprice+=+ el.price; // total price code
+    totalprice+=+el.price; // total price code
 
    let discount=document.createElement("h5");
    discount.innerText=`Dis% Rs:${el.discount}`;
@@ -57,7 +65,7 @@ function display(cart){
         removeProduct(el)
       }
 
-     div.append(img_url,title,price,discount,btn,btn1);
+     div.append(img_url,title,price,discount,btn1);
         box2_div.append(div);
    });
   // console.log(totalprice);
@@ -71,6 +79,7 @@ function display(cart){
 
 // Delete function
 const removeProduct =async (el)=>{
+  
   let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart/${el.id}`,{
       method:"DELETE",
       headers:{
@@ -94,27 +103,86 @@ const removeProduct =async (el)=>{
 
 //proceed to checkout
 
-const buynow = async(el) => {
+// const buynow = async(el) => {
  
 
 
- try{
-  let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
-    method:"POST",
-    body: JSON.stringify(el),
-    headers:{
-        "content-type":"application/json"
-    }
-  });
-   let updatedData=await res.json();
-   console.log(updatedData);
+//  try{
+//   let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
+//     method:"POST",
+//     body: JSON.stringify(el),
+//     headers:{
+//         "content-type":"application/json"
+//     }
+//   });
+//    let data=await res.json();
+//    console.log(data);
 
-   window.location.href='././checkout.html';
- }
- catch(error){
-console.log(error);
+//    window.location.href='././checkout.html';
+//  }
+//  catch(error){
+// console.log(error);
+// }
+// };
+
+const checkout=document.getElementById("checkout");
+checkout.onclick=()=>{
+Add_checkout();
 }
-};
 
 
+
+let arr=[];
+
+const checkout_data=async()=>{
+    try{
+ 
+        let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/cart');
+        let data=await res.json()
+        console.log(data);
+       data.forEach((el)=>{
+         arr.push(el);
+       })
+     
+  
+     }catch(error){
+          console.log(error);
+     }
+}
+
+console.log("arr:",arr)
+checkout_data();
+
+
+//Adding cart data to checkout page
+const Add_checkout=()=>{
+  for(let i=0; i<arr.length; i++){
+   let el=arr[i];
+   proceed_to_checkout(el);
+   
+}
+// window.location.reload();
+}
+
+
+const proceed_to_checkout= async(el)=> {
+  window.location.href='checkout.html';
+  try{
+    let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/checkout`,{
+      method:"POST",
+      body: JSON.stringify(el),
+      headers:{
+          "content-type":"application/json"
+      }
+    });
+     let data=await res.json();
+     console.log(data);
+  
+     window.location.href='checkout.html';
+   }
+   catch(error){
+  console.log(error);
+  }
+
+}
 

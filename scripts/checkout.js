@@ -103,6 +103,16 @@ place_order.onclick=()=>{
 
 
 const placeOrder=async ()=>{
-window.location.href="payment.html"
+
+  let res=await fetch('https://636d5e73b567eed48ac032d6.mockapi.io/checkout');
+  let data=await res.json()
+//    console.log(data);
+  data.forEach((el)=>{
+      console.log(el.id);
+  })
+
+  try{}catch(error){
+    console.log(error);
+  }
   
 }

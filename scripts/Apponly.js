@@ -1,3 +1,8 @@
+import {navbar} from "../component/nav.js";
+
+let showdata = document.querySelector(".headIndex");
+showdata.innerHTML = navbar()
+ 
  // paginating code
 let buttons_div=document.getElementById("buttons");
 const createbuttons = (Toatal_images,images_per_page) => {
@@ -16,7 +21,7 @@ for(let i=1;i<=button;i++){
     const getpaginatedData = async(clicked_button,limit) => {
     let response=await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/user?page=${clicked_button}&limit=${limit}`);
     let data= await response.json();
-    console.log(data);
+   // console.log(data);
     append(data);
     
     }
@@ -54,23 +59,36 @@ const append = (data) => {
     let btn=document.createElement("button");
     btn.innerText="Add to Cart";
     btn.addEventListener("click",function(){
-        myFun(el);
+       add_to_cart(el);
     });
      div.append(img_url,title,price,discount,actual_price,btn);
     box2.append(div);
     });
 }
 //code for Add to cart button
-        let dataArray=JSON.parse(localStorage.getItem("cart_items"))||[];
+const add_to_cart= async(el)=>{
 
-        function myFun(el){
-         //window.location.href="./cart.html";
-        
-        dataArray.push(el);
+    try{
+
+      let res= await fetch(`https://636d5e73b567eed48ac032d6.mockapi.io/cart`,{
+        method:"POST",
+        body: JSON.stringify(el),
+        headers:{
+          "content-type":"application/json"
+        }
+      });
       
-        let x=localStorage.setItem("cart_items",JSON.stringify(dataArray));
-        console.log(x);
-    };
+      let data=await res.json();
+ 
+    
+  
+  
+    }catch(error){
+       console.log(error);
+    }
+  }
+
+
 //filter code with buttons
 //btn1
 let filterBtn=document.getElementById("consumer");
@@ -137,7 +155,7 @@ const filterData=async(content)=>{
             arr.push(el);
         }
        })
-      // console.log(arr)
+   
        append(arr);
     }catch(error){
          console.log(error);
