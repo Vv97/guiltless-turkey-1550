@@ -24,6 +24,13 @@ function getdata() {
     let email = form.email.value;
     let password = form.password.value;
     let ress = form.repass.value;
+    let code = form.code.value;
+
+
+    if (name == "" || email == "" || password == "" || ress == "" || code == "") {
+        alert("please put all the value in input");
+        return false
+    }
 
 
     let val = password.length < 8 ? false : true;
@@ -44,7 +51,7 @@ function getdata() {
     let c = 0;
     arr.forEach(el => {
         if (el.email == email) {
-            alert("registerd email")
+            alert("user already exists")
             c++
         }
     })

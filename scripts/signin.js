@@ -61,7 +61,7 @@ function sdata(el) {
         console.log(el.email)
 
         if (el.email == email && el.password == password) {
-            alert("succesful sign up");
+            alert("succesful sign in");
             let URL = "index.html";
             window.location.href = URL;
         }
