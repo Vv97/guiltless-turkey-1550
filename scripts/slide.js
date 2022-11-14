@@ -75,7 +75,7 @@ const repeter = () => {
 
         slider[slidenumber].classList.add("active")
         slideicons[slidenumber].classList.add("active")
-    }, 2000)
+    }, 3500)
 }
 
 repeter()
