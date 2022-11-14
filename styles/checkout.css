@@ -63,14 +63,16 @@
 
 
     #finalCheck{
-      margin-right: 0;
-      padding-right: 0;
-      border:1px solid red;
+     padding:20px;
+      border:0px solid red;
       width:40%;
-      height: 300px;
+      height:auto;
       margin:auto;
-      margin-top: 10px;
+      margin-top:20px;
       margin-bottom: 100px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      cursor: pointer;
   }
 
 #finalCheck>button{

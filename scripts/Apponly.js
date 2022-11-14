@@ -144,6 +144,14 @@ let filterBtn8=document.getElementById("btn8");
 let content=filterBtn8.innerText;
    filterData(content);
 }
+
+// btn9
+let filterBtn9=document.getElementById("btn9");
+ filterBtn9.onclick = ()=>{
+let content=filterBtn9.innerText;
+console.log(content)
+   filterData(content);
+}
 // filter code
 const filterData=async(content)=>{
     let arr=[];
@@ -154,7 +162,7 @@ const filterData=async(content)=>{
         if(el.category===content){
             arr.push(el);
         }
-       })
+       });
    
        append(arr);
     }catch(error){
